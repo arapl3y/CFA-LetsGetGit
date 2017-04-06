@@ -1,3 +1,5 @@
 # Team Sneezy
 
 Study Tracker
+
+.
