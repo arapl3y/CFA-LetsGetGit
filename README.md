@@ -2,6 +2,7 @@
 
 Study Tracker
 
+hello taka
 Taka
 
 
@@ -12,5 +13,4 @@ JESS.
 .
 
 #1
-Alex waz here hehehh 
-
+Alex waz here hehehh
