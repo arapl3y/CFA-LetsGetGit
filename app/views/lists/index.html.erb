@@ -7,7 +7,7 @@
     <tr>
       <th>User</th>
       <th>Admin</th>
-      <th>Title</th>
+      <th>Plan type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= list.user %></td>
         <td><%= list.admin %></td>
-        <td><%= list.title %></td>
+        <td><%= list.plan_type %></td>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
