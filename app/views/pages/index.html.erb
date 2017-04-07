@@ -1,28 +1,42 @@
 <div class="row">
-  <div class="col s12 center">
-    <div class="card">
-      <div class="card-content">
-        <ul class="plans left">
-          <%= image_tag('note.svg', class: 'note-img') %>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li>
-        </ul>
-        <a class="btn-floating halfway-fab waves-effect waves-light green accent-3"><i class="material-icons">add</i></a>
-      </div>
+    <div class="col s12 center">
+        <div class="card plans">
+            <div class="card-content">
+                <ul class="left">
+                    <!-- <%= image_tag('note.svg', class: 'note-img') %> -->
+
+                </ul>
+                <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
+                    <i class="material-icons">add</i>
+                </a>
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <input type="text" placeholder="What do you want to do?">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-<div class="card">
+<div class="card feed">
     <div class="card-tabs">
-      <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a href="#test4">Test 1</a></li>
-        <li class="tab"><a class="active" href="#test5">Test 2</a></li>
-      </ul>
+        <ul class="tabs tabs-fixed-width">
+            <li class="tab">
+                <a href="#test4">Planned</a>
+            </li>
+            <li class="tab">
+                <a class="active" href="#test5">Completed</a>
+            </li>
+        </ul>
     </div>
     <div class="card-content">
-      <div id="test4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos tempore placeat, doloremque vero, rem molestiae quae recusandae id dolores, odio consequatur quam nostrum vel animi itaque provident facere. Eaque!</div>
-      <div id="test5">Craft beer truffaut jean shorts, fap salvia tumeric mlkshk affogato retro biodiesel narwhal shoreditch edison bulb pug. Roof party PBR&B deep v pour-over, mustache hexagon green juice. Pabst bespoke cornhole beard, salvia mustache meggings leggings church-key lo-fi tousled etsy knausgaard master cleanse. Intelligentsia plaid cronut, ethical edison bulb wolf flexitarian pour-over austin crucifix. Vape poke letterpress stumptown, farm-to-table disrupt cardigan sustainable raclette truffaut distillery shabby chic gochujang gentrify banjo. Truffaut bushwick post-ironic etsy +1. Narwhal scenester you probably haven't heard of them church-key.</div>
+        <div id="test4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos tempore placeat, doloremque vero, rem molestiae quae recusandae id dolores, odio consequatur quam nostrum vel animi itaque provident facere. Eaque!</div>
+        <div id="test5">Craft beer truffaut jean shorts, fap salvia tumeric mlkshk affogato retro biodiesel narwhal shoreditch edison bulb pug. Roof party PBR&B deep v pour-over, mustache hexagon green juice. Pabst bespoke cornhole beard, salvia mustache
+            meggings leggings church-key lo-fi tousled etsy knausgaard master cleanse. Intelligentsia plaid cronut, ethical edison bulb wolf flexitarian pour-over austin crucifix. Vape poke letterpress stumptown, farm-to-table disrupt cardigan sustainable
+            raclette truffaut distillery shabby chic gochujang gentrify banjo. Truffaut bushwick post-ironic etsy +1. Narwhal scenester you probably haven't heard of them church-key.</div>
     </div>
-  </div>
+</div>
