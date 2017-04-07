@@ -1,0 +1,17 @@
+<nav>
+   <div class="nav-wrapper">
+     <a href="#" class="brand-logo">Logo</a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      <% if user_signed_in? %>
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+      <% else %>
+        <li><%= link_to('Login', new_user_session_path)  %></li>
+      <% end %>
+
+       <!-- <li><a href="sass.html">Sass</a></li>
+       <li><a href="badges.html">Components</a></li>
+       <li><a href="collapsible.html">JavaScript</a></li> -->
+     </ul>
+   </div>
+ </nav>
