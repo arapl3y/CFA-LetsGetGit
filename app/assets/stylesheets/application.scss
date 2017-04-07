@@ -16,14 +16,25 @@
 
 @import "materialize";
 
+body {
+  height: 100vh;
+}
+
 .login-box {
   padding: 2em;
   border: 1px solid #EEE;
 }
 
 .card {
-  min-height: 22em;
   margin-top: 1.6em;
+}
+
+.plans {
+  min-height: 22em;
+}
+
+.feed {
+  min-height: 40em;
 }
 
 .tabs .tab a {
