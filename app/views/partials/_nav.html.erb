@@ -1,18 +1,31 @@
+
 <nav>
    <div class="nav-wrapper">
      <!-- <a href="#" class="brand-logo">Logo</a> -->
      <a href="#" class="brand-logo">To do</a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-      <% if user_signed_in? %>
-        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-      <% else %>
-        <li><%= link_to('Login', new_user_session_path)  %></li>
-      <% end %>
 
-       <!-- <li><a href="sass.html">Sass</a></li>
-       <li><a href="badges.html">Components</a></li>
-       <li><a href="collapsible.html">JavaScript</a></li> -->
-     </ul>
-   </div>
- </nav>
+   <nav class="green accent-3">
+       <div class="nav-wrapper">
+         <%= link_to 'Study App', root_path, class: 'brand-logo' %>
+         <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+         <ul class="right hide-on-med-and-down">
+          <li><%= link_to('Home', root_path, class: 'btn waves-effect waves-teal lime accent-2 green-text accent-3') %></li>
+           <% if user_signed_in? %>
+             <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn waves-effect lime accent-2 green-text accent-3') %></li>
+           <% else %>
+             <li><%= link_to('Login', new_user_session_path, class: 'btn waves-effect lime accent-2 green-text accent-3')  %></li>
+           <% end %>
+         </ul>
+         <ul class="side-nav" id="mobile-demo">
+
+           <li><%= link_to 'Home', root_path, class: 'waves-effect waves-teal' %></li>
+           <% if user_signed_in? %>
+             <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'waves-effect waves-teal') %></li>
+           <% else %>
+             <li><%= link_to('Login', new_user_session_path, class: 'waves-effect waves-teal')  %></li>
+           <% end %>
+         </ul>
+       </div>
+     </nav>

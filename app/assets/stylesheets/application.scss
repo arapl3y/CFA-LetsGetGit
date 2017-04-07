@@ -14,4 +14,37 @@
  *= require_self
  */
 
- @import "materialize";
+@import "materialize";
+
+.login-box {
+  padding: 2em;
+  border: 1px solid #EEE;
+}
+
+.card {
+  min-height: 22em;
+  margin-top: 1.6em;
+}
+
+.tabs .tab a {
+  color: #00e676;
+  &.active {
+    background-color: transparent;
+    color: #00e676;
+  }
+  &:hover {
+    color: #00e676;
+  }
+}
+
+.tabs .indicator {
+  background-color: #00e676;
+}
+
+.note-img {
+  width: 3em;
+  height: 3em;
+  position: relative;
+  top: -2em;
+  left: -1em;
+}
