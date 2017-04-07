@@ -4,9 +4,10 @@
       <div class="card-content">
         <ul class="plans left">
           <%= image_tag('note.svg', class: 'note-img') %>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li>
+          <% @plans.each do |plan|%>
+             <%=plan.title %>
+             <br>
+          <% end %>
         </ul>
         <a class="btn-floating halfway-fab waves-effect waves-light green accent-3"><i class="material-icons">add</i></a>
       </div>
