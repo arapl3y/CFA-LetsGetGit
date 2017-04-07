@@ -1,19 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @list.user %>
-</p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @list.admin %>
-</p>
 
-<p>
-  <strong>Plan Type:</strong>
-  <%= @list.plan_type %>
-</p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+
+
+<% @plans.each do |plan|%>
+   <%=plan.title %>
+   <br>
+<% end %>
+
+
+
+
+<%= render 'plans/form', plan: @plan %>

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+
   resources :lists do
-    resources :plans
-  end
+    member do
+     resources :plans
+    end
+   end
 
   root 'pages#index'
 
