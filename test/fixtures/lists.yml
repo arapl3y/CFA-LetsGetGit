@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
   admin: false
-  title: MyString
+  check_list: false
+  user: one
 
 two:
-  user: two
   admin: false
-  title: MyString
+  check_list: false
+  user: two
