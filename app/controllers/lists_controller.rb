@@ -10,6 +10,9 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @plan = Plan.new
+    @list = List.find(params[:id])
+    @plans = @list.plans
   end
 
   # GET /lists/new
@@ -24,7 +27,8 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    id = current_user.id
+    @list = List.new(user_id: id)
 
     respond_to do |format|
       if @list.save
