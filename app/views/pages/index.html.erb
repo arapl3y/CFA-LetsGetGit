@@ -54,7 +54,13 @@
         </ul>
     </div>
     <div class="card-content">
-        <div id="test4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos tempore placeat, doloremque vero, rem molestiae quae recusandae id dolores, odio consequatur quam nostrum vel animi itaque provident facere. Eaque!</div>
+        <div id="test4">
+            <% @all_plan.each do |plan| %>
+                <%= plan.user.email%> |
+                <%= plan.title %>
+                <br>
+            <% end %>
+        </div>
         <div id="test5">Craft beer truffaut jean shorts, fap salvia tumeric mlkshk affogato retro biodiesel narwhal shoreditch edison bulb pug. Roof party PBR&B deep v pour-over, mustache hexagon green juice. Pabst bespoke cornhole beard, salvia mustache
             meggings leggings church-key lo-fi tousled etsy knausgaard master cleanse. Intelligentsia plaid cronut, ethical edison bulb wolf flexitarian pour-over austin crucifix. Vape poke letterpress stumptown, farm-to-table disrupt cardigan sustainable
             raclette truffaut distillery shabby chic gochujang gentrify banjo. Truffaut bushwick post-ironic etsy +1. Narwhal scenester you probably haven't heard of them church-key.</div>
