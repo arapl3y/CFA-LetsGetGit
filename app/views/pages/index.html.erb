@@ -6,8 +6,10 @@
                   <li class="tab">
                     <a class="active" href="#test1">Plans</a>
                   </li>
+
                   <li class="tab">
                     <a href="#test2">Checklist</a>
+
                     <!-- Add checklist title so that user knows which checklist theyre following -->
                   </li>
                 </ul>
@@ -20,6 +22,20 @@
                       <% end %>
                     </div>
                     <div id="test2">
+                      <!-- <%#= current_user.email %> -->
+
+                      <% if current_user.has_role? :student %>
+                        <% @admin_plans = User.find(6).lists.first.plans %>
+                        <% @admin_plans.each do |plan| %>
+                          <%= plan.title %>
+                           <br>
+                        <% end %>
+                      <% elsif current_user.has_role? :teacher %>
+                        <h2>I am a teacher</h2>
+                        <!-- # put teacher dashboard elements here -->
+                      <% end %>
+
+
                       <!-- Checklist plans go here  -->
                     </div>
                   </div>
