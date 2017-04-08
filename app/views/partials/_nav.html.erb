@@ -4,14 +4,19 @@
          <%= link_to 'Study App', root_path, class: 'brand-logo' %>
          <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
+
+
           <li><%= link_to('Home', root_path, class: 'btn waves-effect waves-teal lime accent-2 green-text accent-3') %></li>
            <% if user_signed_in? %>
+              <li><%= current_user.email %></li>
              <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn waves-effect lime accent-2 green-text accent-3') %></li>
            <% else %>
              <li><%= link_to('Login', new_user_session_path, class: 'btn waves-effect lime accent-2 green-text accent-3')  %></li>
            <% end %>
          </ul>
          <ul class="side-nav" id="mobile-demo">
+
+
 
            <li><%= link_to 'Home', root_path, class: 'waves-effect waves-teal' %></li>
            <% if user_signed_in? %>
