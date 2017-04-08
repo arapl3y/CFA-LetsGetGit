@@ -15,7 +15,7 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= list.user %></td>
+        <td><%= list.user.email %></td>
         <td><%= list.admin %></td>
         <td><%= list.plan_type %></td>
         <td><%= link_to 'Show', list %></td>
