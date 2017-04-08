@@ -28,7 +28,7 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     @plan.user_id = current_user.id
-    @plan.list_id = params[:id]
+    @plan.list_id = current_user.lists.first.id
 
     respond_to do |format|
       if @plan.save
