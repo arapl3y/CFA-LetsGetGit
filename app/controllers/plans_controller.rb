@@ -5,6 +5,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @plans = Plan.all
+    @list = current_user.lists.first.id
   end
 
   # GET /plans/1
@@ -15,8 +16,7 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @plan = Plan.new
-    @list = params([:id])
-    @plan.list_id = @list.id
+    @list = current_user.lists.first.id
   end
 
   # GET /plans/1/edit

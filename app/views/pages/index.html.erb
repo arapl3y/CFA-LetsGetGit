@@ -3,21 +3,31 @@
         <div class="card plans">
             <div class="card-content">
                 <ul class="left">
+
                     <!-- <%= image_tag('note.svg', class: 'note-img') %>  -->
 
+
+
+                    <!-- <%= image_tag('note.svg', class: 'note-img') %> -->
+                    <% @plans.each do |plan|%>
+                      <p class="left-align"> <%=plan.title %></p>
+                       <br>
+                    <% end %>
 
                 </ul>
                 <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
                     <i class="material-icons">add</i>
                 </a>
+
                 <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <input type="text" placeholder="What do you want to do?">
+                      <%= render 'plans/form', plan: @plan%>
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
