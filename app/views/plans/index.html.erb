@@ -20,14 +20,11 @@
         <td><%= plan.user %></td>
         <td><%= plan.list %></td>
         <td><%= plan.completion %></td>
-        <td><%= link_to 'Show', plan %></td>
-        <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
-        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', list_plan_path(@list, plan) %></td>
+        <td><%= link_to 'Edit', edit_list_plan_path(@list, plan) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Plan', new_plan_path %>
