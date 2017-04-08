@@ -1,19 +1,28 @@
 <div class="row">
     <div class="col s12 center">
         <div class="card plans">
-            <div class="card-content">
-                <ul class="left">
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab">
+                    <a class="active" href="#test1">Plans</a>
+                  </li>
+                  <li class="tab">
+                    <a href="#test2">Checklist</a>
+                    <!-- Add checklist title so that user knows which checklist theyre following -->
+                  </li>
+                </ul>
 
-                    <!-- <%= image_tag('note.svg', class: 'note-img') %>  -->
-
-
-
-                    <!-- <%= image_tag('note.svg', class: 'note-img') %> -->
-                    <% @plans.each do |plan|%>
-                      <p class="left-align"> <%=plan.title%></p>
-                       <br>
-                    <% end %>
-
+                  <div class="card-content">
+                    <div id="test1" class="plan-list left">
+                      <% @plans.each do |plan|%>
+                        <%= plan.title %>
+                         <br>
+                      <% end %>
+                    </div>
+                    <div id="test2">
+                      <!-- Checklist plans go here  -->
+                    </div>
+                  </div>
                 </ul>
                 <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
                     <i class="material-icons">add</i>
