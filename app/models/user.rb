@@ -16,7 +16,10 @@ class User < ApplicationRecord
 
   def create_todo
     id = self.id
-    @list = List.new(user_id: id, admin: false, plan_type: false)
+
+    @list = List.create(user_id: id, admin: false, plan_type: false)
+    @plan = Plan.create(title:nil, user_id: id, list_id: @list.id)
+
   end
 
   def create_checklist
