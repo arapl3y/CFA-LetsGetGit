@@ -10,7 +10,9 @@
 
                     <!-- <%= image_tag('note.svg', class: 'note-img') %> -->
                     <% @plans.each do |plan|%>
+
                       <p class="left-align"> <%=plan.title%></p>
+
                        <br>
                     <% end %>
 
@@ -21,7 +23,7 @@
 
                 <div id="modal1" class="modal">
                     <div class="modal-content">
-
+                      <%= render 'plans/form', plan: @plan, list:@list %>
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
