@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   rolify
   after_create :assign_default_role, :create_todo
-  has_many :plans
-  has_many :lists
+  has_many :plans, :dependent => :destroy
+  has_many :lists, :dependent => :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
