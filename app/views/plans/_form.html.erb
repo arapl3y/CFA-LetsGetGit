@@ -1,4 +1,7 @@
+
 <%= form_for [@list, plan] do |f| %>
+
+
   <% if plan.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
@@ -15,6 +18,8 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit %>
