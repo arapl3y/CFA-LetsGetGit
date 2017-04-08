@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
   resources :lists do
-    member do
      resources :plans
-   end
  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
