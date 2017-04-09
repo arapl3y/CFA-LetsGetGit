@@ -13,47 +13,65 @@
  *= require_tree .
  *= require_self
  */
-
 @import "materialize";
 
 body {
   height: 100vh;
 }
 
+h4 > i {
+  font-size: 1.2em !important;
+  position: relative;
+  top: 8px;
+}
+
 nav {
-  background: #1d976c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1d976c, #93f9b9); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1d976c, #93f9b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #1d976c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1d976c, #93f9b9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1d976c, #93f9b9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   ul li a {
     font-size: 1.2em;
   }
-  a.brand-logo {
-    font-size: 2em;
+
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+    margin-top: 4px;
+  }
+
+  .side-logo {
+    border-radius: 50%;
+    background: linear-gradient(to right, #1d976c, #93f9b9);
+    width: 200px;
+    height: 200px;
+    padding: 0.6em;
   }
 }
 
 .welcome {
   width: 100%;
   min-height: 15em;
-  background: url('eagle-logo 2.png') 50% 50%;
+  background: url('eagle-logo.png') 50% 50%;
   background-repeat: no-repeat;
   margin-bottom: 2em;
+
   h1 {
     margin-bottom: 2.4em;
     letter-spacing: 2px;
   }
+
   i {
     font-size: 1.6em;
   }
 }
 
-
-
 .login-box {
   padding: 2em;
   border: 1px solid #EEE;
 }
-
 
 .side-nav h3 {
   color: black;
@@ -64,12 +82,26 @@ nav {
   margin-bottom: 2em;
 }
 
-.card {
-  margin-top: 1.6em;
-}
-
 .plans {
+  margin-top: 1.6em;
   min-height: 24em;
+
+  .done-icon {
+    position: relative;
+    top: 4px;
+    left: 4px;
+    font-size: 1.6em;
+    border: 1px solid #00e676;
+    border-radius: 50%;
+    padding: 1px 2px;
+    color: #00e676;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: #00e676;
+      color: white;
+    }
+  }
 }
 
 .feed {
@@ -78,10 +110,13 @@ nav {
 
 .tabs .tab a {
   color: #00e676;
+  font-size: 1.2em;
+
   &.active {
     background-color: transparent;
     color: #00e676;
   }
+
   &:hover {
     color: #00e676;
   }
@@ -99,10 +134,40 @@ nav {
   margin-bottom: 8em;
 }
 
+.plan-item {
+  padding: 1em;
+  font-size: 1.1em;
+  margin-top: 0;
+  width: auto;
+  display: inline-block;
+}
+
+.old-posts p {
+  color: red !important;
+}
+
+.latest-completions {
+  color: green !important;
+}
+
+.all-completions,
+.latest-completions,
+.new-posts,
+.old-posts {
+  padding: 1em;
+  font-size: 1.2em;
+  width: auto;
+  display: inline-block;
+
+  p {
+    margin-bottom: 10px !important;
+  }
+}
 @media (min-width: 992px) {
   .brand-logo {
     margin-left: 2em;
   }
+
   nav ul {
     margin-right: 2em;
   }
