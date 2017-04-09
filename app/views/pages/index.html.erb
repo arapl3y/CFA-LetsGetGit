@@ -87,19 +87,19 @@
     </h4>
     <div class="old-posts card">
       <% @uncompleted_plan.each do |plan| %>
-
+      <p>
       <%if plan.completion == false %>
       <% if plan.title == nil %>
   <% else %>
         <%= plan.user.username%>
         is taking their time on:
         <b><%= plan.title %></b>
-        <p class="small">created <%= time_ago_in_words(plan.created_at)%> ago</p>
+        <span class = "small">created <%= time_ago_in_words(plan.created_at)%> ago</span>
         <br>
+        </p>
       <% end %>
   <% else %>
       <% end %>
-
       <% end %>
     </div>
 
@@ -111,7 +111,7 @@
     <div class="new-posts card">
       <% @all_plan_order.each do |plan| %>
         <p><%if plan.completion == false %>
-            <% if plan.title == nil %>
+            <% if plan.title == nil || plan.user.has_role?(:admin) %>
             <% else %>
               <b><%= plan.user.username %></b>
               is
@@ -156,7 +156,7 @@
         <p><% if plan.completion == true %>
             <% if plan.title == nil %>
             <% else %>
-              <%= plan.user.username%>
+              <b><%= plan.user.username%></b>
               has completed
               <b><%= plan.title %></b>
               for
