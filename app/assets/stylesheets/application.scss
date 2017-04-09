@@ -34,11 +34,11 @@ body {
 }
 
 .plans {
-  min-height: 24em;
+  min-height: 22em;
 }
 
 .feed {
-  min-height: 30em;
+  min-height: 40em;
 }
 
 .tabs .tab a {
@@ -56,10 +56,10 @@ body {
   background-color: #00e676;
 }
 
-.modal {
-  min-height: 20em;
-}
-
-.study-inputs {
-  margin-bottom: 8em;
+.note-img {
+  width: 3em;
+  height: 3em;
+  position: relative;
+  top: -2em;
+  left: -1em;
 }
