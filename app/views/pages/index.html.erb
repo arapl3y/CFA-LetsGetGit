@@ -21,6 +21,13 @@
                     </div>
                     <div id="test2">
                       <!-- Checklist plans go here  -->
+
+
+                      <% @admin_list.each do |plan|%>
+                        <%= plan.title %>
+                         <br>
+                      <% end %>
+
                     </div>
                   </div>
                 </ul>
@@ -51,26 +58,32 @@
         </ul>
     </div>
     <div class="card-content">
-        <div id="test4">
-            <% @all_plan.each do |plan| %>
-              <% if plan.title == nil %>
-              <% else %>
-              <%= plan.user.email %>:
-              <%= plan.title %>
-                <br>
-              <% end %>
-            <% end %>
-        </div>
-        <div id="test5">
-          <% @all_plan.each do |plan| %>
-          <% if plan.title == nil %>
-          <% else %>
-          <% if plan.completion == true %>
-          <%= plan.user.email %>:
-          <%= plan.title %>
-            <br>
-            <% end %>
-          <% end %>
-        <% end %>
-    </div>
+
+      <div id="test4">
+
+      <% @all_plan_order.each do |plan| %>
+      <%if plan.completion == false %>
+      <% if plan.title == nil %>
+      <% else %>
+      <%= plan.user.email%> |
+      <%= plan.title %>
+      <br>
+      <% end %>
+      <% else %>
+      <% end %>
+      <% end %>
+      </div>
+      
+      <div id="test5">
+      <% @all_plan.each do |plan| %>
+      <% if plan.title == nil %>
+      <% else %>
+      <% if plan.completion == true %>
+      <%= plan.user.email %>:
+      <%= plan.title %>
+      <br>
+      <% end %>
+      <% end %>
+      <% end %>
+      </div>
 </div>
