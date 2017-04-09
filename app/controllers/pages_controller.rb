@@ -17,6 +17,7 @@ class PagesController < ApplicationController
 
 
     @all_plan_order = @all_plan.order(:id).reverse_order.limit(15)
+    @uncompleted_plan = @all_plan.limit(3)
 
   end
 
