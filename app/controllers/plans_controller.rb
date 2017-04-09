@@ -33,10 +33,10 @@ class PlansController < ApplicationController
 
     respond_to do |format|
       if @plan.save
-        format.html { redirect_to :back, notice: 'Plan was successfully created.' }
+        format.html { redirect_to :back }
         format.json { render :show, status: :created, location: @plan }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, notice: 'Cannot have empty entry' }
         format.json { render json: @plan.errors, status: :unprocessable_entity }
       end
     end
