@@ -64,22 +64,36 @@
             </li>
         </ul>
     </div>
-    <div class="card-content">
+<div class="card-content">
+ <div id="test4">
+   <div class = "old-post">
+     <% @uncompleted_plan.each do |plan| %>
+        <% if plan.completion == false %>
+            <% if plan.title == nil %>
+            <% else %>
+               <%= plan.user.email %>
+               <%= plan.title %>
+               <br>
+            <% end %>
+        <% else %>
+        <% end %>
+     <% end %>
+  </div>
 
-      <div id="test4">
-
-      <% @all_plan_order.each do |plan| %>
-      <%if plan.completion == false %>
-      <% if plan.title == nil %>
-      <% else %>
-      <%= plan.user.email%> |
-      <%= plan.title %>
-      <br>
-      <% end %>
-      <% else %>
-      <% end %>
-      <% end %>
-      </div>
+   <div class = "new-post">
+     <% @all_plan_order.each do |plan| %>
+        <%if plan.completion == false %>
+           <% if plan.title == nil %>
+           <% else %>
+               <%= plan.user.email %> |
+               <%= plan.title %>
+               <br>
+           <% end %>
+        <% else %>
+        <% end %>
+     <% end %>
+   </div>
+ </div>
 
       <div id="test5">
       <% @all_plan.each do |plan| %>
