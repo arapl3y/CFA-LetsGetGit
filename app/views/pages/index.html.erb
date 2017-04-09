@@ -65,21 +65,24 @@
 </div>
 <div class="card-content">
 <div id="test4">
+    <h3>Procrastinators</h3>
     <div class="old-post">
-        <% @uncompleted_plan.each do |plan| %>
-        <% if plan.completion == false %>
-        <% if plan.title == nil %>
-    <% else %>
-        <%= plan.user.email %>
+      <% @uncompleted_plan.each do |plan| %>
+      <%if plan.completion == false %>
+      <% if plan.title == nil %>
+  <% else %>
+        <%= plan.user.email%>
+        is procrastinating on :
         <%= plan.title %>
         <br>
-        <% end %>
-    <% else %>
-        <% end %>
-        <% end %>
+      <% end %>
+  <% else %>
+      <% end %>
+      <% end %>
     </div>
 
     <div class="new-post">
+    <h3>All Plans</h3>
         <% @all_plan_order.each do |plan| %>
         <%if plan.completion == false %>
         <% if plan.title == nil %>
