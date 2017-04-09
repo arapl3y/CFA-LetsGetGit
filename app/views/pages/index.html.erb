@@ -71,6 +71,7 @@
       </li>
     </ul>
   </div>
+
   <div class="card-content">
     <div id="test4">
       <h4>Procrastinators
@@ -89,26 +90,9 @@
             <% end %>
           <% else %>
           <% end %>
-
-    <div class="new-post">
-    <h3>All Plans</h3>
-        <% @all_plan_order.each do |plan| %>
-        <%if plan.completion == false %>
-        <% if plan.title == nil %>
-    <% else %>
-        <%= plan.user.username %>
-        is
-        <%=plan.type_of_study%>
-        <b><%= plan.title %></b>
-        for
-        <%= plan.hours %>
-        hours
-        <br>
-        <% end %>
-    <% else %>
-
-        <% end %>
+  <% end %>
       </div>
+
       <h4>Plan Feed
         <i class="material-icons">assignment</i>
       </h4>
