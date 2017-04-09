@@ -15,15 +15,21 @@
                 <div class="card-content">
                     <div id="test1" class="plan-list left-align">
                         <% @plans.each do |plan|%>
-                        <% if plan.completion == true %>
-                    <% else %>
-                        <% if plan.title == nil %>
-                    <% else %>
-                        <%= link_to 'Done', completed_path(plan)%>
-                        <%= plan.title %>
-                        <br>
-                        <% end %>
-                        <% end %>
+                            <% if plan.completion == true %>
+                            <% else %>
+                                  <% if plan.title == nil %>
+                                  <% else %>
+                                      <%= current_user.username %>
+                                      is
+                                      <%= plan.type_of_study %>:
+                                      <%= plan.title %>
+                                      for
+                                      <%= plan.hours %>
+                                      hours.
+                                      <%= link_to 'Done', completed_path(plan)%>
+                                      <br>
+                                  <% end %>
+                            <% end %>
                         <% end %>
                     </div>
                     <div id="test2">
