@@ -17,7 +17,7 @@
                       <% @plans.each do |plan|%>
                       <% if plan.completion == true %>
                       <% else %>
-                        <% if plan.title == nil %>
+                        <% if plan.title == nil || plan.title == "" %>
                         <% else %>
                           <%= link_to 'Done', completed_path(plan)%>
                           <%= plan.title %>

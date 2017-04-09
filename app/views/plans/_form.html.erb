@@ -17,7 +17,7 @@
 
 <div class="row study-inputs">
   <div class="input-field col s4">
-    <select id="typeOfStudy">
+    <select>
       <option value="" disabled selected>Type of Study</option>
       <option value="1">Reading</option>
       <option value="2">Practicing</option>
@@ -27,14 +27,14 @@
   </div>
 
   <div class="col s4">
-    <div class="input-field" id="resourceTitle">
+    <div class="input-field">
       <%= f.label :resource %>
       <%= f.text_field :title %>
     </div>
   </div>
 
   <div class="input-field col s4">
-    <select id="hoursOfStudy">
+    <select>
       <option value="" disabled selected>Hours</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -47,7 +47,7 @@
 
 <div class="row">
   <div class="actions">
-    <%= f.submit 'Create', class: 'btn study-plan-submit' %>
+    <%= f.submit 'Create', class: 'btn' %>
   </div>
 </div>
 
