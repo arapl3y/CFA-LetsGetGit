@@ -24,7 +24,7 @@
       <option value="2">Practicing</option>
       <option value="3">Contributing</option>
     </select> -->
-    <%= f.select :type_of_study, ['Reading', 'Practicing', 'Contributing']%>
+    <%= f.select :type_of_study, ['Type of Study', 'Reading', 'Practicing', 'Contributing'], disabled: 'Type of Study', selected: 'Type of Study'%>
 
   </div>
 
@@ -45,7 +45,7 @@
       <option value="3">3</option>
       <option value="4">4+</option>
     </select> -->
-    <%= f.select :hours, ['1', '2', '3', '4+']%>
+    <%= f.select :hours, ['Hours', '1', '2', '3', '4+'], disabled: 'Hours', selected: 'Hours' %>
     <!-- <label>Type of Study</label> -->
   </div>
 </div>
