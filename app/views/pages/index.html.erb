@@ -14,37 +14,43 @@
                 </ul>
 
                 <div class="card-content">
-                    <div id="test1" class="plan-list left-align">
-                      <% @plans.each do |plan|%>
-                          <% if plan.completion == true %>
-                          <% else %>
-                                <% if plan.title == nil %>
-                                <% else %>
-                                    <%= current_user.username %>
-                                    is
-                                    <%= plan.type_of_study %>:
-                                    <%= plan.title %>
-                                    for
-                                    <%= plan.hours %>
-                                    hours.
-                                    <%= link_to 'Done', completed_path(plan)%>
-                                    <br>
-                                <% end %>
-                          <% end %>
-
-                      <% end %>
-                    </div>
-                    <div id="test2" class="checklist-list left-align">
-                        <!-- Checklist plans go here  -->
-
-                        <% @admin_list.each do |plan|%>
-                        <%= plan.hours %> hours of
-                        <b><%= plan.title%></b> is recommended
-                        <br>
+                  <div id="test1" class="plan-list left-align">
+                    <% @plans.each do |plan|%>
+                      <% if plan.completion == true %>
+                      <% else %>
+                        <% if plan.title == nil %>
+                        <% else %>
+                          <div class="card plan-item">
+                            <%= current_user.username %>
+                            is
+                            <%= plan.type_of_study %>:
+                            <%= plan.title %>
+                            for
+                            <%= plan.hours %>
+                            hours.
+                            <%= link_to '<i class="material-icons done-icon">done</i>'.html_safe, completed_path(plan)%>
+                            <br>
+                          </div>
                         <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
 
-                    </div>
+                  <div id="test2" class="checklist-list left-align">
+                    <!-- Checklist plans go here  -->
+                    <% @admin_list.each do |plan|%>
+                      <div class="card plan-item">
+                        <%= plan.hours %>
+                        hours of
+                        <b><%= plan.title%></b>
+                        is recommended
+                        <br>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
+
+
         </ul>
         <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
             <i class="material-icons">add</i>
@@ -72,79 +78,94 @@
     </li>
 </ul>
 </div>
+
+
 <div class="card-content">
-<div id="test4">
-    <h3>Procrastinators</h3>
-    <div class="old-post">
+  <div id="test4">
+    <h4>Procrastinators
+      <i class="material-icons">assignment_late</i>
+    </h4>
+    <div class="old-posts card">
       <% @uncompleted_plan.each do |plan| %>
+
       <%if plan.completion == false %>
       <% if plan.title == nil %>
   <% else %>
         <%= plan.user.username%>
-        is procrastinating on :
+        is taking their time on:
         <b><%= plan.title %></b>
         <p class="small">created <%= time_ago_in_words(plan.created_at)%> ago</p>
         <br>
       <% end %>
   <% else %>
       <% end %>
+   
       <% end %>
     </div>
 
-    <div class="new-post">
-    <h3>All Plans</h3>
-        <% @all_plan_order.each do |plan| %>
-        <%if plan.completion == false %>
-        <% if plan.title == nil %>
-    <% else %>
-        <%= plan.user.username %>
-        is
-        <%=plan.type_of_study%>
-        <b><%= plan.title %></b>
-        for
-        <%= plan.hours %>
-        hours
-        <br>
-        <% end %>
-    <% else %>
-        <% end %>
-        <% end %>
-    </div>
-</div>
 
-<div id="test5">
-    <h3>Latest Completion</h3>
-    <div class="latest-completion">
-        <% @completed_plan.each do |plan| %>
-        <% if plan.completion == true %>
-        <% if plan.title == nil %>
-    <% else %>
-        Congratulations
-        <%= plan.user.email%>
-        on the latest task completion :
-        <b><%= plan.title %></b>
-        <br>
+
+    <h4>Plan Feed
+      <i class="material-icons">assignment</i>
+    </h4>
+    <div class="new-posts card">
+      <% @all_plan_order.each do |plan| %>
+        <p><%if plan.completion == false %>
+            <% if plan.title == nil %>
+            <% else %>
+              <b><%= plan.user.username %></b>
+              is
+              <%=plan.type_of_study%>
+              <b><%= plan.title %></b>
+              for
+              <% plan.hours %>
+            </p>
+          <% end %>
+        <% else %>
         <% end %>
-    <% else %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="test5">
+    <h4>Latest Completion
+      <i class="material-icons">alarm_on</i>
+    </h4>
+    <div class="latest-completions card">
+      <% @completed_plan.each do |plan| %>
+        <p><% if plan.completion == true %>
+            <% if plan.title == nil %>
+            <% else %>
+              Congratulations
+              <%= plan.user.username%>
+              on the latest task completion :
+              <b><%= plan.title %></b>
+            </p>
+          <% end %>
+        <% else %>
         <% end %>
-        <% end %>
+      <% end %>
     </div>
 
-    <h3>All Completion</h3>
-    <% @all_plan_order.each do |plan| %>
-    <% if plan.completion == true %>
-    <% if plan.title == nil %>
-<% else %>
-    <%= plan.user.username%>
-    has completed
-    <b><%= plan.title %></b>
-    for
-    <%= plan.hours %>
-    hours
-    <br>
-    <% end %>
-<% else %>
-    <% end %>
-    <% end %>
-</div>
-</div>
+    <h4>All Completions
+      <i class="material-icons">done_all</i>
+    </h4>
+    <div class="all-completions card">
+      <% @all_plan_order.each do |plan| %>
+        <p><% if plan.completion == true %>
+            <% if plan.title == nil %>
+            <% else %>
+              <%= plan.user.username%>
+              has completed
+              <b><%= plan.title %></b>
+              for
+              <%= plan.hours %>
+              hours
+            </p>
+          <% end %>
+        <% else %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  </div>

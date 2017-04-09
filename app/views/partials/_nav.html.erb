@@ -1,7 +1,7 @@
 
    <nav>
        <div class="nav-wrapper">
-         <%= link_to 'Aquila', root_path, class: 'brand-logo' %>
+         <%= link_to image_tag("eagle-icon.png", class: "responsive-img"), root_path, class: 'brand-logo' %>
          <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
          <ul class="right hide-on-med-and-down">
 
@@ -18,6 +18,7 @@
          </ul>
          <ul class="side-nav center" id="mobile-demo">
           <li><h3>Aquila</h3></li>
+          <li><%= image_tag("eagle-icon.png", class: "responsive-img side-logo") %></li>
           <hr>
 
 
