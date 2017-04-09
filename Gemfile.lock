@@ -87,7 +87,6 @@ GEM
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
     hashie (3.5.5)
-    hirb (0.7.3)
     http_parser.rb (0.6.0)
     i18n (0.8.1)
     jbuilder (2.6.3)
@@ -248,7 +247,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   guard-livereload (~> 2.5)
-  hirb (~> 0.7.0)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
