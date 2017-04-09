@@ -3,15 +3,14 @@
         <div class="card plans">
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab">
-                        <a class="active" href="#test1">Plans</a>
-                    </li>
-                    <li class="tab">
-                        <a href="#test2">Checklist</a>
-                        <!-- Add checklist title so that user knows which checklist theyre following -->
-                    </li>
+                  <li class="tab">
+                    <a class="active" href="#test1">Plans</a>
+                  </li>
+                  <li class="tab">
+                    <a href="#test2">Checklist</a>
+                    <!-- Add checklist title so that user knows which checklist theyre following -->
+                  </li>
                 </ul>
-
 
                   <div class="card-content">
                     <div id="test1" class="plan-list left-align">
@@ -26,94 +25,86 @@
                         <% end %>
                       <% end %>
                       <% end %>
-
                     </div>
                     <div id="test2">
-                        <!-- Checklist plans go here  -->
+                      <!-- Checklist plans go here  -->
 
-                        <% @admin_list.each do |plan|%>
+
+                      <% @admin_list.each do |plan|%>
                         <%= plan.title %>
-                        <br>
-                        <% end %>
+                         <br>
+                      <% end %>
 
                     </div>
-                </div>
-        </ul>
-        <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
-            <i class="material-icons">add</i>
-        </a>
+                  </div>
+                </ul>
+                <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
+                    <i class="material-icons">add</i>
+                </a>
 
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <%= render 'plans/form', plan: @plan, list:@list %>
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                       <%= render 'plans/form', plan: @plan, list:@list %>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </div>
-</div>
-</div>
 </div>
 
 <div class="card feed">
-<div class="card-tabs">
-<ul class="tabs tabs-fixed-width">
-    <li class="tab">
-        <a href="#test4">Planned</a>
-    </li>
-    <li class="tab">
-        <a class="active" href="#test5">Completed</a>
-    </li>
-</ul>
-</div>
-<div class="card-content">
-
-<div id="test4">
-
-    <% @all_plan_order.each do |plan| %>
-    <%if plan.completion == false %>
-    <% if plan.title == nil %>
-<% else %>
-    <%= plan.user.email%>
-    |
-    <%= plan.title %>
-    <br>
-    <% end %>
-<% else %>
-    <% end %>
-    <% end %>
-</div>
-
-<div id="test5">
-    <h3>Latest Completion</h3>
-    <div class="latest-completion">
-        <% @completed_plan.each do |plan| %>
-        <% if plan.completion == true %>
-        <% if plan.title == nil %>
-    <% else %>
-        Congratulations
-        <%= plan.user.email%>
-        on the latest task completion :
-        <%= plan.title %>
-        <br>
-        <% end %>
-    <% else %>
-        <% end %>
-        <% end %>
+    <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+            <li class="tab">
+                <a href="#test4">Planned</a>
+            </li>
+            <li class="tab">
+                <a class="active" href="#test5">Completed</a>
+            </li>
+        </ul>
     </div>
+<div class="card-content">
+ <div id="test4">
+   <div class = "old-post">
+     <% @uncompleted_plan.each do |plan| %>
+        <% if plan.completion == false %>
+            <% if plan.title == nil %>
+            <% else %>
+               <%= plan.user.email %>
+               <%= plan.title %>
+               <br>
+            <% end %>
+        <% else %>
+        <% end %>
+     <% end %>
+  </div>
 
-    <h3>All Completion</h3>
-    <% @all_plan_order.each do |plan| %>
-    <% if plan.completion == true %>
-    <% if plan.title == nil %>
-<% else %>
-    <%= plan.user.email%>
-    |
-    <%= plan.title %>
-    <br>
-    <% end %>
-<% else %>
-    <% end %>
-    <% end %>
-</div>
-   
+   <div class = "new-post">
+     <% @all_plan_order.each do |plan| %>
+        <%if plan.completion == false %>
+           <% if plan.title == nil %>
+           <% else %>
+               <%= plan.user.email %> |
+               <%= plan.title %>
+               <br>
+           <% end %>
+        <% else %>
+        <% end %>
+     <% end %>
+   </div>
+ </div>
+
+      <div id="test5">
+      <% @all_plan.each do |plan| %>
+      <% if plan.title == nil %>
+      <% else %>
+      <% if plan.completion == true %>
+      <%= plan.user.email %>:
+      <%= plan.title %>
+      <br>
+      <% end %>
+      <% end %>
+      <% end %>
+      </div>
 </div>
