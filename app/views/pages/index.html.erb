@@ -21,6 +21,13 @@
                     </div>
                     <div id="test2">
                       <!-- Checklist plans go here  -->
+
+
+                      <% @admin_list.each do |plan|%>
+                        <%= plan.title %>
+                         <br>
+                      <% end %>
+
                     </div>
                   </div>
                 </ul>
