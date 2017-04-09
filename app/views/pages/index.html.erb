@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col s12 center">
+  <div class="col s12 center">
         <div class="card plans">
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
@@ -37,23 +37,46 @@
 
                     </div>
                   </div>
-                </ul>
+            
                 <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
                     <i class="material-icons">add</i>
                 </a>
 
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                       <%= render 'plans/form', plan: @plan, list:@list %>
-                    </div>
-                </div>
 
-            </div>
+        <div class="card-content">
+          <div id="test1" class="plan-list">
+              <% @plans.each do |plan|%>
+                <%= plan.title %>
+              <% end %>
+          </div>
+          <div id="test2">
+            <!-- Checklist plans go here  -->
+            <ul class="Error: source does not appear to be markup.">
+              <% @admin_list.each do |plan|%>
+              <li><%= plan.title %></li>
+
+              <% end %>
+            </ul>
+          </div>
         </div>
+
+    <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
+      <i class="material-icons">add</i>
+    </a>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <%= render 'plans/form', plan: @plan, list: @list %>
+      </div>
     </div>
+
+  </div>
+</div>
+</div>
 </div>
 
 <div class="card feed">
+
     <div class="card-tabs">
         <ul class="tabs tabs-fixed-width">
             <li class="tab">
@@ -107,4 +130,5 @@
       <% end %>
       <% end %>
       </div>
+
 </div>
