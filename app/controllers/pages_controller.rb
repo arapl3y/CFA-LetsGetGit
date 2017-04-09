@@ -25,6 +25,7 @@ class PagesController < ApplicationController
 
     @all_plan_order = @all_plan.sort.reverse[0..14]
     @uncompleted_plan = @all_plan.sort[0..2]
+    @completed_plan = @all_plan.sort.reverse[0..2]
   end
 
 end
