@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @list = current_user.lists.first
     @plan = Plan.new
     @all_plan = Plan.all
+    @all_plan_order = @all_plan.order(:id).reverse_order.limit(15)
   end
 
 end
