@@ -16,31 +16,31 @@
 
                 <div class="card-content">
                     <div id="test1" class="plan-list left-align">
+                      <% @plans.each do |plan|%>
+                          <% if plan.completion == true %>
+                          <% else %>
+                                <% if plan.title == nil %>
+                                <% else %>
+                                    <%= current_user.username %>
+                                    is
+                                    <%= plan.type_of_study %>:
+                                    <%= plan.title %>
+                                    for
+                                    <%= plan.hours %>
+                                    hours.
+                                    <%= link_to 'Done', completed_path(plan)%>
+                                    <br>
+                                <% end %>
+                          <% end %>
 
-                        <% @plans.each do |plan|%>
-                            <% if plan.completion == true %>
-                            <% else %>
-                                  <% if plan.title == nil %>
-                                  <% else %>
-                                      <%= current_user.username %>
-                                      is
-                                      <%= plan.type_of_study %>:
-                                      <%= plan.title %>
-                                      for
-                                      <%= plan.hours %>
-                                      hours.
-                                      <%= link_to 'Done', completed_path(plan)%>
-                                      <br>
-                                  <% end %>
-                            <% end %>
-
-                        <% end %>
+                      <% end %>
                     </div>
                     <div id="test2" class="checklist-list left-align">
                         <!-- Checklist plans go here  -->
 
                         <% @admin_list.each do |plan|%>
-                        <%= plan.title %>
+                        <%= plan.hours %> hours of
+                        <b><%= plan.title%></b> is recommended
                         <br>
                         <% end %>
 
@@ -81,9 +81,9 @@
       <%if plan.completion == false %>
       <% if plan.title == nil %>
   <% else %>
-        <%= plan.user.email%>
+        <%= plan.user.username%>
         is procrastinating on :
-        <%= plan.title %>
+        <b><%= plan.title %></b>
         <br>
       <% end %>
   <% else %>
@@ -97,9 +97,12 @@
         <%if plan.completion == false %>
         <% if plan.title == nil %>
     <% else %>
-        <%= plan.user.email %>
-        |
-        <%= plan.title %>
+        <%= plan.user.username %>
+        is
+        <%=plan.type_of_study%>
+        <b><%= plan.title %></b>
+        for
+        <% plan.hours %>
         <br>
         <% end %>
     <% else %>
@@ -118,7 +121,7 @@
         Congratulations
         <%= plan.user.email%>
         on the latest task completion :
-        <%= plan.title %>
+        <b><%= plan.title %></b>
         <br>
         <% end %>
     <% else %>
@@ -131,9 +134,12 @@
     <% if plan.completion == true %>
     <% if plan.title == nil %>
 <% else %>
-    <%= plan.user.email%>
-    |
-    <%= plan.title %>
+    <%= plan.user.username%>
+    has completed
+    <b><%= plan.title %></b>
+    for
+    <%= plan.hours %>
+    hours
     <br>
     <% end %>
 <% else %>

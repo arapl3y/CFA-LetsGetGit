@@ -6,7 +6,42 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: 'teacher1@gmail.com', username: "Teacher1", password: 'asdfasdf')
-User.create!(email: 'student1@gmail.com', username: "student1", password: 'asdfasdf')
-User.create!(email: 'student2@gmail.com', username: "student2", password: 'asdfasdf')
-User.create!(email: 'student3@gmail.com', username: "student3", password: 'asdfasdf')
+user1 = User.create!(email: 'teacher1@gmail.com', username: "Teacher1", password: 'asdfasdf', user_id: 1)
+user2 = User.create!(email: 'student1@gmail.com', username: "student1", password: 'asdfasdf', user_id: 2)
+user3 = User.create!(email: 'student2@gmail.com', username: "student2", password: 'asdfasdf', user_id: 3)
+user4 = User.create!(email: 'student3@gmail.com', username: "student3", password: 'asdfasdf', user_id: 4)
+
+user1.add_role :admin
+user2.add_role :student
+user3.add_role :student
+user4.add_role :student
+
+student1 = User.find_by_email('student1@gmail.com')
+list2 = student1.lists.first
+list_id2 = list2.id
+student1.plans.create!(title: 'Create Study App',type_of_study: 'Practicing', hours: '4', list_id: list_id2)
+student1.plans.create!(title: 'EloquentJavascript',type_of_study: 'Reading', hours: '3', list_id: list_id2)
+list3 = student2.lists.first
+list_id3 = list3.id
+student2.plans.create!(title: 'Rspec',type_of_study: 'Reading', hours: '1', list_id: list_id3)
+student2.plans.create!(title: 'Learn Git',type_of_study: 'Practicing', hours: '2', list_id: list_id3)
+student3 = User.find_by_email('student3@gmail.com')
+list4 = student3.lists.first
+list_id4 = list4.id
+student3.plans.create!(title: 'A-frame',type_of_study: 'Contributing', hours: '1', list_id: list_id4)
+student3.plans.create!(title: 'GO',type_of_study: 'Contributing', hours: '2', list_id: list_id4)
+student3.plans.create!(title: 'Python',type_of_study: 'Reading', hours: '3', list_id: list_id4)
+student2.plans.create!(title: 'Stripe Payment',type_of_study: 'Reading', hours: '3', list_id: list_id3)
+student1.plans.create!(title: 'Solve Code wars Problem 2',type_of_study: 'Practicing', hours: '3', list_id: list_id2)
+
+
+teacher = User.find_by_email('teacher1@gmail.com')
+list = teacher.lists.first
+list_id = list.id
+teacher.plans.create!(title: 'Koans', hours: '4', list_id: list_id)
+teacher.plans.create!(title: 'Read Michael Hartl Ruby On Rails', hours: '3', list_id: list_id)
+teacher.plans.create!(title: 'Solve Code wars', hours: '3', list_id: list_id)
+teacher.plans.create!(title: 'Work on airbnb project', hours: '1', list_id: list_id)
+teacher.plans.create!(title: 'Git projects everyday', hours: '1', list_id: list_id)
+teacher.plans.create!(title: 'Contribute to open source', hours: '1', list_id: list_id)
+teacher.plans.create!(title: 'Improve portfolio', hours: '2', list_id: list_id)

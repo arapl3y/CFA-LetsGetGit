@@ -38,6 +38,4 @@ class User < ApplicationRecord
     @plan = Plan.create(title:nil, user_id: id, list_id: @list.id)
   end
 
-
-
 end
