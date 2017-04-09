@@ -17,12 +17,18 @@
 
 <div class="row study-inputs">
   <div class="input-field col s4">
+<<<<<<< HEAD
     <select>
+=======
+    <!-- <select id="typeOfStudy">
+>>>>>>> 98b9f36b2a22e0ab809c1a9b83ad130dbac0204e
       <option value="" disabled selected>Type of Study</option>
       <option value="1">Reading</option>
       <option value="2">Practicing</option>
       <option value="3">Contributing</option>
-    </select>
+    </select> -->
+
+    <%= f.select :type_of_study, ['Reading', 'Practicing', 'Contributing']%>
     <!-- <label>Type of Study</label> -->
   </div>
 
@@ -34,13 +40,18 @@
   </div>
 
   <div class="input-field col s4">
+<<<<<<< HEAD
     <select>
+=======
+    <!-- <select id="hoursOfStudy">
+>>>>>>> 98b9f36b2a22e0ab809c1a9b83ad130dbac0204e
       <option value="" disabled selected>Hours</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4+</option>
-    </select>
+    </select> -->
+    <%= f.select :hours, ['1', '2', '3', '4+']%>
     <!-- <label>Type of Study</label> -->
   </div>
 </div>
