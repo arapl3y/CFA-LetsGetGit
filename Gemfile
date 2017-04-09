@@ -14,6 +14,7 @@ gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-facebook'
 gem "rolify"
+gem 'hirb', '~> 0.7.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

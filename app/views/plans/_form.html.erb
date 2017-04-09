@@ -1,27 +1,54 @@
-
 <%= form_for [@list, plan] do |f| %>
 
-
+<div class="row">
   <% if plan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(plan.errors.count, "error") %>
+      prohibited this plan from being saved:</h2>
 
-      <ul>
+    <ul>
       <% plan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<div class="row study-inputs">
+  <div class="input-field col s4">
+    <select id="typeOfStudy">
+      <option value="" disabled selected>Type of Study</option>
+      <option value="1">Reading</option>
+      <option value="2">Practicing</option>
+      <option value="3">Contributing</option>
+    </select>
+    <!-- <label>Type of Study</label> -->
   </div>
 
+  <div class="col s4">
+    <div class="input-field" id="resourceTitle">
+      <%= f.label :resource %>
+      <%= f.text_field :title %>
+    </div>
+  </div>
 
+  <div class="input-field col s4">
+    <select id="hoursOfStudy">
+      <option value="" disabled selected>Hours</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4+</option>
+    </select>
+    <!-- <label>Type of Study</label> -->
+  </div>
+</div>
 
+<div class="row">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create', class: 'btn study-plan-submit' %>
   </div>
+</div>
+
 <% end %>

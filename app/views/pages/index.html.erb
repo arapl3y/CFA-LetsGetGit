@@ -1,89 +1,86 @@
 <div class="row">
-    <div class="col s12 center">
-        <div class="card plans">
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                  <li class="tab">
-                    <a class="active" href="#test1">Plans</a>
-                  </li>
-                  <li class="tab">
-                    <a href="#test2">Checklist</a>
-                    <!-- Add checklist title so that user knows which checklist theyre following -->
-                  </li>
-                </ul>
+  <div class="col s12 center">
+    <div class="card plans">
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab">
+            <a class="active" href="#test1">Plans</a>
+          </li>
+          <li class="tab">
+            <a href="#test2">Checklist</a>
+            <!-- Add checklist title so that user knows which checklist theyre following -->
+          </li>
+        </ul>
 
-                  <div class="card-content">
-                    <div id="test1" class="plan-list left">
-                      <% @plans.each do |plan|%>
-                        <%= plan.title %>
-                         <br>
-                      <% end %>
-                    </div>
-                    <div id="test2">
-                      <!-- Checklist plans go here  -->
+        <div class="card-content">
+          <div id="test1" class="plan-list">
+              <% @plans.each do |plan|%>
+                <%= plan.title %>
+              <% end %>
+          </div>
+          <div id="test2">
+            <!-- Checklist plans go here  -->
+            <ul class="Error: source does not appear to be markup.">
+              <% @admin_list.each do |plan|%>
+              <li><%= plan.title %></li>
 
-
-                      <% @admin_list.each do |plan|%>
-                        <%= plan.title %>
-                         <br>
-                      <% end %>
-
-                    </div>
-                  </div>
-                </ul>
-                <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
-                    <i class="material-icons">add</i>
-                </a>
-
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                       <%= render 'plans/form', plan: @plan, list:@list %>
-                    </div>
-                </div>
-
-            </div>
+              <% end %>
+            </ul>
+          </div>
         </div>
+    </ul>
+    <a class="btn-floating halfway-fab waves-effect waves-light green accent-3" href="#modal1">
+      <i class="material-icons">add</i>
+    </a>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <%= render 'plans/form', plan: @plan, list: @list %>
+      </div>
     </div>
+
+  </div>
+</div>
+</div>
 </div>
 
 <div class="card feed">
-    <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-            <li class="tab">
-                <a href="#test4">Planned</a>
-            </li>
-            <li class="tab">
-                <a class="active" href="#test5">Completed</a>
-            </li>
-        </ul>
-    </div>
-    <div class="card-content">
+<div class="card-tabs">
+<ul class="tabs tabs-fixed-width">
+  <li class="tab">
+    <a href="#test4">Planned</a>
+  </li>
+  <li class="tab">
+    <a class="active" href="#test5">Completed</a>
+  </li>
+</ul>
+</div>
+<div class="card-content">
 
-      <div id="test4">
+<div id="test4">
+  <% @all_plan_order.each do |plan| %>
+    <% if plan.completion == false %>
+        <% if plan.title == nil %>
+        <% else %>
+          <%= plan.user.email%>
+          <%= plan.title %>
+          <br>
+        <% end %>
+    <% else %>
+    <% end %>
+  <% end %>
+</div>
 
-      <% @all_plan_order.each do |plan| %>
-      <%if plan.completion == false %>
+  <div id="test5">
+    <% @all_plan.each do |plan| %>
       <% if plan.title == nil %>
       <% else %>
-      <%= plan.user.email%> |
-      <%= plan.title %>
-      <br>
+        <% if plan.completion == true %>
+          <%= plan.user.email %>:
+          <%= plan.title %>
+          <br>
+        <% end %>
       <% end %>
-      <% else %>
-      <% end %>
-      <% end %>
-      </div>
-      
-      <div id="test5">
-      <% @all_plan.each do |plan| %>
-      <% if plan.title == nil %>
-      <% else %>
-      <% if plan.completion == true %>
-      <%= plan.user.email %>:
-      <%= plan.title %>
-      <br>
-      <% end %>
-      <% end %>
-      <% end %>
-      </div>
+    <% end %>
+  </div>
 </div>
