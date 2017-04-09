@@ -66,6 +66,13 @@ class PlansController < ApplicationController
     end
   end
 
+  def completed
+    @plan = Plan.find(params[:id])
+    @plan.update(completion: true)
+    redirect_to :back
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plan
