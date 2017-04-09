@@ -5,7 +5,14 @@ class PagesController < ApplicationController
     @plans = current_user.lists.first.plans
     @list = current_user.lists.first
     @plan = Plan.new
-    @all_plan = Plan.all
+    @all_plan = []
+
+    Plan.all.each do |plan|
+      if plan.title == nil
+      else
+        @all_plan << plan
+      end
+    end
 
 
     User.all.each do |user|
@@ -16,8 +23,8 @@ class PagesController < ApplicationController
     end
 
 
-    @all_plan_order = @all_plan.order(:id).reverse_order.limit(15)
-
+    @all_plan_order = @all_plan.sort.reverse[0..14]
+    @uncompleted_plan = @all_plan.sort[0..2]
   end
 
 end
