@@ -13,10 +13,17 @@
                 </ul>
 
                   <div class="card-content">
-                    <div id="test1" class="plan-list left">
+                    <div id="test1" class="plan-list left-align">
                       <% @plans.each do |plan|%>
-                        <%= plan.title %>
+                      <% if plan.completion == true %>
+                      <% else %>
+                        <% if plan.title == nil %>
+                        <% else %>
+                          <%= link_to 'Done', completed_path(plan)%>
+                          <%= plan.title %>
                          <br>
+                        <% end %>
+                      <% end %>
                       <% end %>
                     </div>
                     <div id="test2">
@@ -73,7 +80,7 @@
       <% end %>
       <% end %>
       </div>
-      
+
       <div id="test5">
       <% @all_plan.each do |plan| %>
       <% if plan.title == nil %>
