@@ -28,8 +28,6 @@ class User < ApplicationRecord
     end
  end
 
-
-
   def assign_default_role
     self.add_role(:student) if self.roles.blank?
   end
@@ -40,9 +38,6 @@ class User < ApplicationRecord
     @plan = Plan.create(title:nil, user_id: id, list_id: @list.id)
   end
 
-  def create_checklist
-    id = self.id
-    @list = List.new(user_id: id, admin: false, plan_type: true)
-  end
+
 
 end
