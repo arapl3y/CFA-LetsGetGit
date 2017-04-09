@@ -37,7 +37,7 @@ class User < ApplicationRecord
   def create_todo
     id = self.id
     @list = List.create(user_id: id, admin: false, plan_type: false)
-    @plan = Plan.create(title:nil, user_id: nil, list_id: @list.id)
+    @plan = Plan.create(title:nil, user_id: id, list_id: @list.id)
   end
 
   def create_checklist
