@@ -99,7 +99,7 @@
       <% end %>
   <% else %>
       <% end %>
-   
+
       <% end %>
     </div>
 
@@ -118,7 +118,8 @@
               <%=plan.type_of_study%>
               <b><%= plan.title %></b>
               for
-              <% plan.hours %>
+              <%= plan.hours %>
+              hours
             </p>
           <% end %>
         <% else %>
