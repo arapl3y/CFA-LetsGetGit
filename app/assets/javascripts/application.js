@@ -20,4 +20,5 @@
 $(document).on('turbolinks:load', function(){
   $('.button-collapse').sideNav();
   $('#modal1').modal();
+  $('select').material_select();
 });
