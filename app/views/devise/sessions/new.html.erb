@@ -1,7 +1,13 @@
+<div class="welcome center">
+  <!-- <%= image_tag('eagle-logo 2.png', class: 'logo-image') %> -->
+  <h1>Welcome to Aquila</h1>
+  <i>You'll see everything</i>
+</div>
 
-<h2 class="center">Log in</h2>
+
 
     <div class="z-depth-1 grey lighten-4 row login-box">
+      <h2 class="center">Log in</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field input-field">
             <%= f.label :email %><br/>
