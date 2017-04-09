@@ -10,3 +10,5 @@ User.create!(email: 'teacher1@gmail.com', username: "Teacher1", password: 'asdfa
 User.create!(email: 'student1@gmail.com', username: "student1", password: 'asdfasdf')
 User.create!(email: 'student2@gmail.com', username: "student2", password: 'asdfasdf')
 User.create!(email: 'student3@gmail.com', username: "student3", password: 'asdfasdf')
+
+User.where(username: "Teacher1").add_role :admin
