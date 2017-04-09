@@ -134,6 +134,11 @@ nav {
   margin-bottom: 8em;
 }
 
+
+.small{
+  font-size: 0.8em;
+}
+
 .plan-item {
   padding: 1em;
   font-size: 1.1em;
@@ -163,6 +168,7 @@ nav {
     margin-bottom: 10px !important;
   }
 }
+
 @media (min-width: 992px) {
   .brand-logo {
     margin-left: 2em;

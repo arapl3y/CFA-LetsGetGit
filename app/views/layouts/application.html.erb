@@ -10,7 +10,9 @@
   </head>
 
   <body>
-
+  <% if flash.any? %>
+    <script type="text/javascript">Materialize.toast('<%=notice%>',3000, 'orange')</script>
+  <% end %>
 
     <%= render 'partials/nav' %>
 
