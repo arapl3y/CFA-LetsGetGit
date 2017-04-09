@@ -20,6 +20,35 @@ body {
   height: 100vh;
 }
 
+nav {
+  background: #1d976c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1d976c, #93f9b9); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1d976c, #93f9b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ul li a {
+    font-size: 1.2em;
+  }
+  a.brand-logo {
+    font-size: 2em;
+  }
+}
+
+.welcome {
+  width: 100%;
+  min-height: 15em;
+  background: url('eagle-logo 2.png') 50% 50%;
+  background-repeat: no-repeat;
+  margin-bottom: 2em;
+  h1 {
+    margin-bottom: 2.4em;
+    letter-spacing: 2px;
+  }
+  i {
+    font-size: 1.6em;
+  }
+}
+
+
+
 .login-box {
   padding: 2em;
   border: 1px solid #EEE;
@@ -30,8 +59,6 @@ body {
   color: black;
   margin-left: em;
 }
-
-
 
 .actions {
   margin-bottom: 2em;
@@ -70,4 +97,13 @@ body {
 
 .study-inputs {
   margin-bottom: 8em;
+}
+
+@media (min-width: 992px) {
+  .brand-logo {
+    margin-left: 2em;
+  }
+  nav ul {
+    margin-right: 2em;
+  }
 }
