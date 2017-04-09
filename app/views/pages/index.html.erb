@@ -12,12 +12,21 @@
                     </li>
                 </ul>
 
-                <div class="card-content">
-                    <div id="test1" class="plan-list left">
-                        <% @plans.each do |plan|%>
-                        <%= plan.title %>
-                        <br>
+
+                  <div class="card-content">
+                    <div id="test1" class="plan-list left-align">
+                      <% @plans.each do |plan|%>
+                      <% if plan.completion == true %>
+                      <% else %>
+                        <% if plan.title == nil %>
+                        <% else %>
+                          <%= link_to 'Done', completed_path(plan)%>
+                          <%= plan.title %>
+                         <br>
                         <% end %>
+                      <% end %>
+                      <% end %>
+
                     </div>
                     <div id="test2">
                         <!-- Checklist plans go here  -->
@@ -106,4 +115,5 @@
     <% end %>
     <% end %>
 </div>
+   
 </div>

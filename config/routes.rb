@@ -4,6 +4,8 @@ Rails.application.routes.draw do
      resources :plans
  end
 
+ get '/plan/:id/completed' => 'plans#completed', as: :completed
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
