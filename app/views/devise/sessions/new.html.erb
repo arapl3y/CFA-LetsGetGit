@@ -5,7 +5,8 @@
 </div>
 
 
-
+<div class="row">
+  <div class="col s6 offset-s3">
     <div class="z-depth-1 grey lighten-4 row login-box">
       <h2 class="center">Log in</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -34,4 +35,6 @@
         <% end %>
 
         <%= render "devise/shared/links" %>
+    </div>
+    </div>
     </div>

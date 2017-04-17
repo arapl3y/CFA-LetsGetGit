@@ -6,15 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create!(email: 'teacher1@gmail.com', username: "Teacher1", password: 'asdfasdf', user_id: 1)
-user2 = User.create!(email: 'student1@gmail.com', username: "student1", password: 'asdfasdf', user_id: 2)
-user3 = User.create!(email: 'student2@gmail.com', username: "student2", password: 'asdfasdf', user_id: 3)
-user4 = User.create!(email: 'student3@gmail.com', username: "student3", password: 'asdfasdf', user_id: 4)
+user1 = User.create!(email: 'teacher1@gmail.com', username: "Jamie", password: 'asdfasdf', user_id: 1)
+user2 = User.create!(email: 'student1@gmail.com', username: "Marlon", password: 'asdfasdf', user_id: 2)
+user3 = User.create!(email: 'student2@gmail.com', username: "Firman", password: 'asdfasdf', user_id: 3)
+user4 = User.create!(email: 'student3@gmail.com', username: "Hannah", password: 'asdfasdf', user_id: 4)
+user5 = User.create!(email: 'student4@gmail.com', username: "Shouhei", password: 'asdfasdf', user_id: 5)
 
 user1.add_role :admin
 user2.add_role :student
 user3.add_role :student
 user4.add_role :student
+user5.add_role :student
 
 student1 = User.find_by_email('student1@gmail.com')
 list2 = student1.lists.first
@@ -48,3 +50,10 @@ list_id4 = list4.id
 student3.plans.create!(title: 'A-frame',type_of_study: 'Contributing', hours: '1', list_id: list_id4)
 student3.plans.create!(title: 'GO',type_of_study: 'Contributing', hours: '2', list_id: list_id4)
 student3.plans.create!(title: 'Python',type_of_study: 'Reading', hours: '3', list_id: list_id4)
+
+student4 = User.find_by_email('student4@gmail.com')
+list5 = student4.lists.first
+list_id5 = list5.id
+student4.plans.create!(title: 'Codewars',type_of_study: 'Practicing', hours: '4+', list_id: list_id5, completion: true)
+student4.plans.create!(title: 'Codewars',type_of_study: 'Practicing', hours: '4+', list_id: list_id5, completion: true)
+student4.plans.create!(title: 'Codewars',type_of_study: 'Practicing', hours: '4+', list_id: list_id5, completion: true)
