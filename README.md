@@ -17,7 +17,6 @@ The second approach is to emulate the teachers' mind through the transcription o
 
 The third approach is to implement a way for teachers to monitor the progress of the students to understand the rationale behind struggling students.
 
-
 # The Thinking Process
 As a group, we brainstormed some of the problems and the ideas to address the issues relating to the different learning paces of students.
 
@@ -38,6 +37,7 @@ The design is minimalistic and all essential information is displayed for the us
 
 <img src="https://image.ibb.co/hRDwgQ/img05.jpg" width="425"/> <img src="https://image.ibb.co/f0OwgQ/img04.jpg" width="425"/>
 
+>>>>>>> 9a23e807b1c6ca1f2fd0aa71c56f7d536aa9e60a
 <img src="https://image.ibb.co/mTjf85/img02.jpg" width="425"/> <img src="https://image.ibb.co/izcNMQ/img03.jpg" width="425"/>
 
 
