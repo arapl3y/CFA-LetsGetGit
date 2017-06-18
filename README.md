@@ -2,25 +2,27 @@
 <img src="https://image.ibb.co/fbavrQ/aquilla.png" width="600" />
 </p>
 
+---
+
+https://arcane-sierra-33990.herokuapp.com/
+
 # About the Project
-As students, we notice that it is hard to accommodate both students who are excelling and struggling in class.
-This issue arises due to the expanding gap between students, limited manpower resources and the challenging task to pinpoint the core underlying reasons for the obstacles.
+As students, we noticed that it is hard to accommodate both students who are excelling and struggling in class. This issue arises due to the expanding gap between students, limited manpower resources and the challenging task to pinpoint the core underlying reasons for the obstacles.
 
 Therefore, this project aims to provide a linking bridge between the teacher, struggling students and the excelling students through various approaches.
 
-The first approach is to ignite rivalry between students so that struggling students would be compelled to do more work to catch up with the excelling students.
+The first approach is to create transparency of students' learning activities outside of the classroom and also to ignite healthy competition between students so that struggling students would be compelled to do more work to catch up with the excelling students.
 
 The second approach is to emulate the teachers' mind through the transcription of resources list to tackle the issue of having limited manpower resources. This is so that students would be able to access additional resources outside of classroom materials to supplement the teachings in the classroom while adopting individualised learning pace.  
 
 The third approach is to implement a way for teachers to monitor the progress of the students to understand the rationale behind struggling students.
 
 
-
 # The Thinking Process
-As a group, we brainstormed some of the problems and the ideas to address the issues relating to the learning paces of students.
+As a group, we brainstormed some of the problems and the ideas to address the issues relating to the different learning paces of students.
 
 <p align="center">
-<img src="https://image.ibb.co/c98Jd5/how_to_accomodate_students.jpg" width="425" />
+<img src="https://image.ibb.co/jYkWFk/img01.jpg" width="425" />
 </p>
 
 
@@ -30,12 +32,13 @@ We then proceeded to create a [Trello board](https://trello.com/b/OgpZiHGR/team-
 
 
 # Design Decisions
+We wanted our design to be modern, clean and easy to navigate. The layout was designed to be single page, and compact so that all features are easily accessible. The colour green was chosen as it is the most relaxing calming colour to the eye. Students are already stressed, so we wanted to calm them down.
 
-<p align="center">
-<img src="https://image.ibb.co/nhaWy5/layout_idea2.jpg" width="425" />
-</p>
+The design is minimalistic and all essential information is displayed for the user. There is no clutter and the tabs keep information hidden until the use wants them displayed.
 
-<img src="https://image.ibb.co/ieJUkk/IMAG0007.jpg" width="425"/> <img src="https://image.ibb.co/gQ9PJ5/layout1.jpg" width="425"/>
+<img src="https://image.ibb.co/hRDwgQ/img05.jpg" width="425"/> <img src="https://image.ibb.co/f0OwgQ/img04.jpg" width="425"/>
+
+<img src="https://image.ibb.co/mTjf85/img02.jpg" width="425"/> <img src="https://image.ibb.co/izcNMQ/img03.jpg" width="425"/>
 
 
 
@@ -47,7 +50,7 @@ Display of the login page.
 <br>
 <br>
 <br>
-When login is successful, the user is redirected to the homepage where user could create personalised plans to their homepage.
+When login is successful, the user is redirected to the homepage where user could create personalised plans to be added to their homepage.
 <br>
 <br>
 ![alt tag](https://image.ibb.co/jtKoBQ/Screen_Shot_2017_04_10_at_12_12_04_am.png)
@@ -68,21 +71,37 @@ When the user completed a plan, their plan will be moved to the completed tab. T
 
 
 
-
 # Challenges
-* Using Github for collaborative work
-* Managing the weakness and strength of each team members
+* Using Git and Github for collaborative work
+* Managing the weaknesses and strengths of each team member
+* Implementing ideas within the MVC structure of Rails
+* Organising the database and overall before beginning the project so that we could easily add more features in the future
+* Finalising ideas
 
+# Installation
 
-# Gems
+## Gems
+1. [Devise](https://github.com/plataformatec/devise)
+2. [Materialize-sass](https://github.com/mkhairi/materialize-sass)
+3. [Omniauth-facebook](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
+4. [Rolify](https://github.com/RolifyCommunity/rolify)
+
+Gems added to Gemfile
 ```
-gem 'pg', '~> 0.18'
 gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-facebook'
 gem "rolify"
 ```
 
+## Install
+* Run  `bundle` to install the gems.
+
+## Migration
+* Run `rake db:migrate` to run migrations that have not been run yet.
+
+## Seeds Generation
+* Run `rake db:seed` to populate the database with seeds.rb.
 
 
 # Contributors
